@@ -11,7 +11,7 @@ class JsonCollector(object):
     self._endpoint = endpoint
   def collect(self):
     # Fetch the JSON
-    response = json.loads(requests.get('https://tower.mydomain.lan/api/v2/instances/',
+    response = json.loads(requests.get(self._endpoint,
                          auth=('admin', 'redhat123'), verify=False).content.decode('UTF-8'))
 
     # Present consumed capacity as gauge
